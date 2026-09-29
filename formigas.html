@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formiga Raivosa | Confeitaria Gourmet & Brownies</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS with Custom Theme Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        choco: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#e4d0cb',
+                            300: '#d2b2aa',
+                            400: '#ba8c80',
+                            500: '#9d6657',
+                            600: '#834f41',
+                            700: '#693d32',
+                            800: '#4a2b23',
+                            900: '#2c1813',
+                            950: '#1a0d0a'
+                        },
+                        pinksoft: {
+                            50: '#fff5f7',
+                            100: '#ffe6ec',
+                            200: '#fcccd8',
+                            300: '#fa9fb8',
+                            400: '#f6678e',
+                            500: '#ee396b',
+                            600: '#d91d52',
+                            700: '#b7123f'
+                        },
+                        cream: {
+                            50: '#fefdfa',
+                            100: '#fffdf5',
+                            200: '#fef7e2',
+                            300: '#fdf0c7',
+                            400: '#fae4a2'
+                        }
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(238, 57, 107, 0.4)' },
+                            '50%': { boxShadow: '0 0 30px rgba(238, 57, 107, 0.8)' }
+                        }
+                    },
+                    animation: {
+                        float: 'float 3s ease-in-out infinite',
+                        pulseGlow: 'pulseGlow 2s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdf8f6;
+            color: #2c1813;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-brand {
+            font-family: 'Fredoka', cursive;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f2e8e5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ba8c80;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #834f41;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#d91d52 0.75px, transparent 0.75px), radial-gradient(#4a2b23 0.75px, #fdf8f6 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-choco-50 text-choco-900 flex flex-col min-h-screen relative">
+
+    <div class="bg-gradient-to-r from-pinksoft-600 via-pinksoft-500 to-choco-800 text-white text-xs md:text-sm py-2 px-4 text-center font-medium shadow-inner flex justify-between items-center z-50">
+        <div class="hidden md:flex items-center space-x-2">
+            <i class="fa-solid fa-truck-fast text-cream-300"></i>
+            <span>Entrega Express para toda a região!</span>
+        </div>
+        <div class="mx-auto md:mx-0 flex items-center gap-2">
+            <span class="bg-cream-300 text-choco-900 text-xs px-2 py-0.5 rounded-full font-bold">CUPOM</span>
+            <span>Use <strong>FORMIGA10</strong> para 10% OFF na primeira compra!</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-3 text-xs">
+            <a href="https://wa.me/554100000000" target="_blank" class="hover:text-cream-300 transition"><i class="fa-brands fa-whatsapp text-sm mr-1"></i> (41) 0000-0000</a>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-choco-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-gradient-to-tr from-pinksoft-600 to-pinksoft-400 rounded-2xl flex items-center justify-center text-white text-2xl shadow-md transform group-hover:rotate-6 transition-transform">
+                    <i class="fa-solid fa-bug text-cream-100"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-brand text-2xl font-bold tracking-tight text-choco-900 group-hover:text-pinksoft-600 transition-colors leading-none">
+                        Formiga <span class="text-pinksoft-500">Raivosa</span>
+                    </span>
+                    <span class="text-[10px] uppercase font-extrabold tracking-widest text-choco-500 mt-1">Gourmet & Brownies</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-choco-700">
+                <a href="#inicio" class="hover:text-pinksoft-600 transition-colors text-sm font-semibold">Início</a>
+                <a href="#cardapio" class="hover:text-pinksoft-600 transition-colors text-sm font-semibold">Cardápio</a>
+                <a href="#historia" class="hover:text-pinksoft-600 transition-colors text-sm font-semibold">Nossa História</a>
+                <a href="#depoimentos" class="hover:text-pinksoft-600 transition-colors text-sm font-semibold">Depoimentos</a>
+                <a href="#contato" class="hover:text-pinksoft-600 transition-colors text-sm font-semibold">Contato</a>
+            </nav>
+
+            <!-- Actions Header (Search, Cart, Auth) -->
+            <div class="flex items-center gap-3">
+                <!-- Direct WhatsApp Btn -->
+                <a href="https://wa.me/554100000000" target="_blank" title="Falar no WhatsApp" class="hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+
+                <!-- Cart Toggle Button -->
+                <button id="open-cart-btn" class="relative p-2.5 bg-choco-50 hover:bg-pinksoft-50 text-choco-800 hover:text-pinksoft-600 rounded-xl transition-all border border-choco-100 flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span class="hidden md:inline font-bold text-xs">Seu Carrinho</span>
+                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-pinksoft-500 text-white text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+                </button>
+
+                <!-- Auth / Profile Button -->
+                <div id="auth-header-container" class="relative">
+                    <!-- Default Logged Out State -->
+                    <button id="btn-open-auth" class="bg-gradient-to-r from-pinksoft-500 to-pinksoft-600 hover:from-pinksoft-600 hover:to-pinksoft-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-user-circle text-base"></i>
+                        <span>Entrar / Cadastrar</span>
+                    </button>
+
+                    <!-- Logged In User Avatar & Dropdown (Hidden initially) -->
+                    <div id="logged-user-menu" class="hidden relative">
+                        <button id="user-menu-btn" class="flex items-center gap-2.5 p-1.5 bg-choco-50 hover:bg-choco-100 rounded-xl border border-choco-200 transition">
+                            <div id="user-avatar" class="w-9 h-9 rounded-lg bg-pinksoft-500 text-white font-extrabold flex items-center justify-center text-sm shadow-sm">
+                                FR
+                            </div>
+                            <div class="hidden lg:flex flex-col text-left">
+                                <span id="user-display-name" class="text-xs font-bold text-choco-900 leading-tight">Olá, Formigueiro!</span>
+                                <span class="text-[10px] text-pinksoft-600 font-extrabold flex items-center gap-1">
+                                    <i class="fa-solid fa-crown text-amber-500"></i>
+                                    <span id="user-points-badge">350 Pontos</span>
+                                </span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-xs text-choco-500 ml-1"></i>
+                        </button>
+
+                        <!-- User Dropdown Menu -->
+                        <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-choco-100 py-2 z-50 animate-fadeIn">
+                            <div class="px-4 py-3 border-b border-choco-100 lg:hidden">
+                                <p id="mobile-user-name" class="text-xs font-bold text-choco-900">Usuário</p>
+                                <p id="mobile-user-points" class="text-[11px] font-semibold text-pinksoft-600"><i class="fa-solid fa-crown text-amber-500 mr-1"></i> 350 Pontos</p>
+                            </div>
+                            <button id="nav-btn-orders" class="w-full text-left px-4 py-2.5 text-xs font-bold text-choco-800 hover:bg-pinksoft-50 hover:text-pinksoft-600 flex items-center gap-2">
+                                <i class="fa-solid fa-receipt text-pinksoft-500 w-4"></i> Meus Pedidos
+                            </button>
+                            <button id="nav-btn-profile" class="w-full text-left px-4 py-2.5 text-xs font-bold text-choco-800 hover:bg-pinksoft-50 hover:text-pinksoft-600 flex items-center gap-2">
+                                <i class="fa-solid fa-address-book text-pinksoft-500 w-4"></i> Meu Perfil & Endereços
+                            </button>
+                            <button id="nav-btn-loyalty" class="w-full text-left px-4 py-2.5 text-xs font-bold text-choco-800 hover:bg-pinksoft-50 hover:text-pinksoft-600 flex items-center gap-2">
+                                <i class="fa-solid fa-gift text-pinksoft-500 w-4"></i> Clube Formiga
+                            </button>
+                            <hr class="my-1 border-choco-100">
+                            <button id="btn-logout" class="w-full text-left px-4 py-2 text-xs font-bold text-red-600 hover:bg-red-50 flex items-center gap-2">
+                                <i class="fa-solid fa-right-from-bracket w-4"></i> Sair da Conta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-choco-800 hover:text-pinksoft-600 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-choco-100 px-4 py-4 space-y-3">
+            <a href="#inicio" class="block text-sm font-bold text-choco-800 hover:text-pinksoft-600">Início</a>
+            <a href="#cardapio" class="block text-sm font-bold text-choco-800 hover:text-pinksoft-600">Cardápio Completo</a>
+            <a href="#historia" class="block text-sm font-bold text-choco-800 hover:text-pinksoft-600">Nossa História</a>
+            <a href="#depoimentos" class="block text-sm font-bold text-choco-800 hover:text-pinksoft-600">Depoimentos</a>
+            <a href="#contato" class="block text-sm font-bold text-choco-800 hover:text-pinksoft-600">Contato & Localização</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative bg-pattern py-12 lg:py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-pinksoft-100 text-pinksoft-600 font-extrabold text-xs px-3.5 py-1.5 rounded-full border border-pinksoft-200 shadow-sm">
+                        <i class="fa-solid fa-heart text-pinksoft-500 animate-pulse"></i>
+                        <span>Os Brownies Mais Recheados do Brasil</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-choco-900 leading-tight">
+                        Crocante por fora,<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-pinksoft-500 via-pinksoft-600 to-choco-700">Ultra Cremoso</span> por dentro!
+                    </h1>
+
+                    <p class="text-choco-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-medium">
+                        Na Formiga Raivosa, chocolate belga de verdade encontra recheios artesanais generosos. Peça online e receba quentinho na sua porta!
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#cardapio" class="w-full sm:w-auto text-center bg-pinksoft-500 hover:bg-pinksoft-600 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-pinksoft-200 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Ver Cardápio Delicioso</span>
+                        </a>
+                        <a href="https://wa.me/554100000000" target="_blank" class="w-full sm:w-auto text-center bg-white border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white font-bold text-base px-6 py-4 rounded-2xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Pedir via WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Counter -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-choco-200/60 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <span class="block font-brand text-2xl lg:text-3xl font-bold text-choco-900">+15.000</span>
+                            <span class="text-xs font-semibold text-choco-500">Brownies Vendidos</span>
+                        </div>
+                        <div>
+                            <span class="block font-brand text-2xl lg:text-3xl font-bold text-pinksoft-600">4.9 ★</span>
+                            <span class="text-xs font-semibold text-choco-500">Avaliação Média</span>
+                        </div>
+                        <div>
+                            <span class="block font-brand text-2xl lg:text-3xl font-bold text-choco-900">100%</span>
+                            <span class="text-xs font-semibold text-choco-500">Artesanal & Fresco</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Display Image & Floating Badges -->
+                <div class="relative flex items-center justify-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80" alt="Brownie Cremoso com Recheio" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-choco-900/60 via-transparent to-transparent"></div>
+                    </div>
+
+                    <!-- Floating Badge 1 -->
+                    <div class="absolute -top-4 -left-4 bg-white p-3.5 rounded-2xl shadow-xl border border-choco-100 flex items-center gap-3 animate-float">
+                        <div class="w-10 h-10 rounded-xl bg-pinksoft-100 text-pinksoft-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-choco-900">Feito Hoje!</p>
+                            <p class="text-[10px] text-choco-500">Fornadas diárias</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 -->
+                    <div class="absolute -bottom-6 -right-2 bg-white p-4 rounded-2xl shadow-xl border border-choco-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-cookie"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-choco-900">Chocolate 50% Belga</p>
+                            <p class="text-[10px] text-pinksoft-600 font-extrabold">Qualidade Premium</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="cardapio" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-pinksoft-600 font-extrabold text-xs tracking-widest uppercase bg-pinksoft-50 px-3 py-1 rounded-full">Nosso Cardápio</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-choco-900 mt-2">Escolha Suas Tentações</h2>
+                <p class="text-choco-600 text-sm mt-1">Todos os nossos doces são produzidos diariamente com insumos nobres.</p>
+            </div>
+
+            <!-- Search Bar & Filters -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+                <!-- Search Input -->
+                <div class="relative w-full md:w-80">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-choco-400"></i>
+                    <input type="text" id="catalog-search" placeholder="Buscar brownie, coxinha, vulcão..." class="w-full pl-11 pr-4 py-2.5 rounded-xl border border-choco-200 focus:outline-none focus:border-pinksoft-500 text-xs font-medium text-choco-900 placeholder-choco-400">
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+                    <button class="category-btn active px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-pinksoft-500 text-white shadow-sm transition-all" data-category="todos">
+                        Todos os Doces
+                    </button>
+                    <button class="category-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-choco-50 text-choco-700 hover:bg-pinksoft-50 hover:text-pinksoft-600 transition-all" data-category="brownies">
+                        Brownies Tradicionais
+                    </button>
+                    <button class="category-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-choco-50 text-choco-700 hover:bg-pinksoft-50 hover:text-pinksoft-600 transition-all" data-category="vulcao">
+                        Recheados & Vulcões
+                    </button>
+                    <button class="category-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-choco-50 text-choco-700 hover:bg-pinksoft-50 hover:text-pinksoft-600 transition-all" data-category="blondies">
+                        Blondies
+                    </button>
+                    <button class="category-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-choco-50 text-choco-700 hover:bg-pinksoft-50 hover:text-pinksoft-600 transition-all" data-category="sobremesas">
+                        Coxinhas & Sobremesas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Products will be injected dynamically via JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section id="historia" class="py-16 bg-cream-100/60 border-y border-cream-300/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Confeiteira produzindo brownies" class="rounded-3xl shadow-xl border-4 border-white object-cover w-full h-96">
+                    <div class="absolute -bottom-6 -left-6 bg-pinksoft-600 text-white p-4 rounded-2xl shadow-lg hidden sm:block">
+                        <span class="font-brand text-2xl font-bold block">100% Amor</span>
+                        <span class="text-xs">Receitas de Família</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-pinksoft-600 font-extrabold text-xs tracking-widest uppercase">Nossa História</span>
+                    <h2 class="text-3xl font-bold text-choco-900">Como Nasceu a Formiga Raivosa?</h2>
+                    <p class="text-choco-700 text-sm leading-relaxed">
+                        Tudo começou quando nossa fundadora tentou encontrar um brownie de verdade na cidade: sem gosto de bolo seco, sem economia de chocolate e com aquela casquinha trincando por fora.
+                    </p>
+                    <p class="text-choco-700 text-sm leading-relaxed">
+                        Após 67 tentativas desastrosas (e muitas queimaduras de caramelização no forno), nasceu a receita perfeita. As formigas da cozinha ficaram tão bravas por não conseguirem roubar a receita trancada a sete chaves que batizaram nossa marca!
+                    </p>
+                    <div class="pt-2 flex items-center gap-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-pinksoft-500"></i>
+                            <span class="text-xs font-bold text-choco-800">Nutella® Original</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-pinksoft-500"></i>
+                            <span class="text-xs font-bold text-choco-800">Leite Ninho®</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-pinksoft-500"></i>
+                            <span class="text-xs font-bold text-choco-800">Manteiga Pura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-pinksoft-600 font-extrabold text-xs tracking-widest uppercase bg-pinksoft-50 px-3 py-1 rounded-full">Depoimentos</span>
+                <h2 class="text-3xl font-bold text-choco-900 mt-2">O que dizem nossos Formigueiros?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-choco-50 p-6 rounded-2xl border border-choco-100 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-amber-400 mb-3">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-choco-700 text-xs italic mb-4">"O Vulcão de Ninho com Nutella é surreal! A quantidade de recheio é inacreditável e a massa do brownie derrete na boca. Pedirei toda semana!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-pinksoft-200 text-pinksoft-700 font-bold flex items-center justify-center text-xs">
+                            MC
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-choco-900">Mariana Costa</h4>
+                            <span class="text-[10px] text-choco-500">Curitiba, PR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-choco-50 p-6 rounded-2xl border border-choco-100 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-amber-400 mb-3">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-choco-700 text-xs italic mb-4">"Comprei o kit de Coxinhas de Morango com Brigadeiro para o aniversário da minha esposa e foi o maior sucesso. Atendimento nota 1000!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-choco-200 text-choco-800 font-bold flex items-center justify-center text-xs">
+                            RS
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-choco-900">Rodrigo Silva</h4>
+                            <span class="text-[10px] text-choco-500">São José dos Pinhais, PR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-choco-50 p-6 rounded-2xl border border-choco-100 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-amber-400 mb-3">
+                        <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    <p class="text-choco-700 text-xs italic mb-4">"O Blondie de Pistache é o melhor doce que já comi na vida. Além de lindo é absurdamente saboroso. Entrega super rápida!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-pinksoft-200 text-pinksoft-700 font-bold flex items-center justify-center text-xs">
+                            FA
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-choco-900">Fernanda Almeida</h4>
+                            <span class="text-[10px] text-choco-500">Curitiba, PR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-16 bg-choco-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <span class="text-pinksoft-400 font-extrabold text-xs uppercase tracking-widest">Contato & Pedidos</span>
+                    <h2 class="text-3xl font-bold font-brand">Quer encomendar para seu evento?</h2>
+                    <p class="text-choco-200 text-sm">Atendemos festas, casamentos, eventos corporativos e mimos especiais com personalização de embalagens.</p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-choco-800 text-pinksoft-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-choco-300 font-semibold">Nosso Ateliê</p>
+                                <p class="text-xs font-bold text-white">Rua dos Doces, 500 - Batel, Curitiba/PR</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-choco-800 text-pinksoft-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-choco-300 font-semibold">Horário de Atendimento</p>
+                                <p class="text-xs font-bold text-white">Terça a Domingo: 11h30 às 20h00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-choco-800 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-choco-300 font-semibold">WhatsApp Direto</p>
+                                <p class="text-xs font-bold text-white">(41) 0000-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick FAQ -->
+                <div class="bg-choco-800/80 p-6 rounded-3xl border border-choco-700 space-y-4">
+                    <h3 class="text-xl font-bold font-brand text-cream-200 mb-4">Dúvidas Frequentes</h3>
+                    
+                    <div class="border-b border-choco-700 pb-3">
+                        <h4 class="text-xs font-bold text-pinksoft-300 mb-1"><i class="fa-solid fa-circle-question mr-1.5"></i> Qual o prazo de validade dos brownies?</h4>
+                        <p class="text-xs text-choco-200">Nossos brownies duram até 7 dias em temperatura ambiente ou até 15 dias refrigerados.</p>
+                    </div>
+
+                    <div class="border-b border-choco-700 pb-3">
+                        <h4 class="text-xs font-bold text-pinksoft-300 mb-1"><i class="fa-solid fa-circle-question mr-1.5"></i> Como aquecer para ficar perfeito?</h4>
+                        <p class="text-xs text-choco-200">Aqueça no micro-ondas por apenas 15 a 20 segundos. A casquinha fica divina e o recheio derrete!</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-pinksoft-300 mb-1"><i class="fa-solid fa-circle-question mr-1.5"></i> Como funciona o Clube Formiga?</h4>
+                        <p class="text-xs text-choco-200">A cada R$ 1,00 em compras você ganha 1 Ponto Formiga. Troque por cupons de desconto e doces grátis!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-choco-950 text-choco-400 py-8 border-t border-choco-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bug text-pinksoft-500"></i>
+                <span class="font-bold text-white">Formiga Raivosa Confeitaria Gourmet</span>
+                <span>© 2026. Todos os direitos reservados.</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-pinksoft-400"><i class="fa-brands fa-instagram text-base"></i></a>
+                <a href="#" class="hover:text-pinksoft-400"><i class="fa-brands fa-facebook text-base"></i></a>
+                <a href="#" class="hover:text-pinksoft-400"><i class="fa-brands fa-tiktok text-base"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==================== MODALS & DRAWERS ==================== -->
+
+    <div id="auth-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl border border-choco-100 overflow-hidden relative animate-scaleUp">
+            
+            <!-- Close Button -->
+            <button id="close-auth-modal" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-choco-50 text-choco-500 hover:text-choco-900 flex items-center justify-center text-sm z-10 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header Header -->
+            <div class="bg-gradient-to-r from-pinksoft-500 to-pinksoft-600 p-6 text-white text-center relative">
+                <div class="w-12 h-12 rounded-2xl bg-white/20 mx-auto flex items-center justify-center text-2xl mb-2 backdrop-blur-md">
+                    <i class="fa-solid fa-bug text-cream-100"></i>
+                </div>
+                <h3 class="font-brand text-2xl font-bold">Clube Formiga Raivosa</h3>
+                <p class="text-xs text-pinksoft-100 mt-1">Entre ou crie sua conta para acumular pontos!</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex border-b border-choco-100 bg-choco-50">
+                <button id="tab-login" class="flex-1 py-3 text-xs font-bold text-pinksoft-600 border-b-2 border-pinksoft-500 bg-white transition">
+                    Entrar
+                </button>
+                <button id="tab-signup" class="flex-1 py-3 text-xs font-bold text-choco-500 hover:text-pinksoft-600 transition">
+                    Criar Conta
+                </button>
+            </div>
+
+            <div class="p-6">
+                <!-- Alert Feedback Box -->
+                <div id="auth-alert" class="hidden mb-4 p-3 rounded-xl text-xs font-medium border"></div>
+
+                <!-- LOGIN FORM -->
+                <form id="form-login" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-choco-800 mb-1">E-mail</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-choco-400 text-xs"></i>
+                            <input type="email" id="login-email" required placeholder="seu@email.com" class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="text-xs font-bold text-choco-800">Senha</label>
+                            <button type="button" id="btn-forgot-password" class="text-[10px] text-pinksoft-600 font-bold hover:underline">Esqueceu a senha?</button>
+                        </div>
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-choco-400 text-xs"></i>
+                            <input type="password" id="login-password" required placeholder="••••••••" class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-pinksoft-500 hover:bg-pinksoft-600 text-white font-bold py-3 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-right-to-bracket"></i> Entrar na Conta
+                    </button>
+
+                    <div class="relative py-2 text-center">
+                        <hr class="border-choco-100">
+                        <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-[10px] text-choco-400 uppercase font-bold">ou</span>
+                    </div>
+
+                    <button type="button" id="btn-guest-login" class="w-full bg-choco-100 hover:bg-choco-200 text-choco-800 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-user-secret"></i> Continuar como Convidado
+                    </button>
+                </form>
+
+                <!-- SIGNUP FORM (Hidden by default) -->
+                <form id="form-signup" class="space-y-4 hidden">
+                    <div>
+                        <label class="block text-xs font-bold text-choco-800 mb-1">Nome Completo</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-user absolute left-3.5 top-1/2 -translate-y-1/2 text-choco-400 text-xs"></i>
+                            <input type="text" id="signup-name" required placeholder="Ex: Maria Oliveira" class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-choco-800 mb-1">E-mail</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-choco-400 text-xs"></i>
+                            <input type="email" id="signup-email" required placeholder="seu@email.com" class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-choco-800 mb-1">Senha (Mínimo 6 caracteres)</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-choco-400 text-xs"></i>
+                            <input type="password" id="signup-password" required minlength="6" placeholder="••••••••" class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-pinksoft-500 hover:bg-pinksoft-600 text-white font-bold py-3 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-user-plus"></i> Criar Minha Conta
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden transition-opacity">
+        <div id="cart-drawer" class="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col z-50 transform translate-x-full transition-transform duration-300">
+            
+            <!-- Cart Header -->
+            <div class="p-5 border-b border-choco-100 flex items-center justify-between bg-choco-50">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-pinksoft-600 text-xl"></i>
+                    <h3 class="font-brand text-xl font-bold text-choco-900">Seu Carrinho</h3>
+                </div>
+                <button id="close-cart-btn" class="w-8 h-8 rounded-full bg-white text-choco-500 hover:text-choco-900 border border-choco-200 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items List Container -->
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+                <!-- Dynamically Populated -->
+            </div>
+
+            <!-- Cart Footer Summary & Checkout -->
+            <div class="p-5 border-t border-choco-100 bg-choco-50/50 space-y-3">
+                <!-- Coupon Code Section -->
+                <div class="flex gap-2">
+                    <input type="text" id="coupon-input" placeholder="Cupom de Desconto" class="flex-1 px-3 py-2 rounded-xl border border-choco-200 text-xs uppercase font-bold focus:outline-none focus:border-pinksoft-500">
+                    <button id="apply-coupon-btn" class="bg-choco-800 hover:bg-choco-900 text-white px-4 py-2 rounded-xl text-xs font-bold transition">Aplicar</button>
+                </div>
+                <p id="coupon-msg" class="text-[10px] font-bold hidden"></p>
+
+                <!-- Calculations -->
+                <div class="space-y-1.5 text-xs text-choco-700 pt-2 border-t border-choco-200/60">
+                    <div class="flex justify-between">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal" class="font-bold">R$ 0,00</span>
+                    </div>
+                    <div class="flex justify-between text-pinksoft-600 hidden" id="discount-row">
+                        <span>Desconto Cupom:</span>
+                        <span id="cart-discount" class="font-bold">- R$ 0,00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Taxa de Entrega:</span>
+                        <span id="cart-delivery" class="font-bold text-emerald-600">R$ 8,00</span>
+                    </div>
+                    <div class="flex justify-between text-base font-bold text-choco-900 pt-2 border-t border-choco-200">
+                        <span>Total:</span>
+                        <span id="cart-total" class="text-pinksoft-600">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <!-- Checkout Actions -->
+                <div class="space-y-2 pt-2">
+                    <button id="btn-whatsapp-checkout" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Finalizar Pedido via WhatsApp
+                    </button>
+                    <button id="btn-direct-checkout" class="w-full bg-pinksoft-500 hover:bg-pinksoft-600 text-white font-bold py-3 rounded-xl text-xs transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-credit-card"></i> Finalizar & Acumular Pontos
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="user-dashboard-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-choco-100 overflow-hidden relative max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-5 bg-gradient-to-r from-choco-800 to-choco-900 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div id="dash-avatar" class="w-10 h-10 rounded-xl bg-pinksoft-500 text-white font-extrabold flex items-center justify-center text-base">
+                        FR
+                    </div>
+                    <div>
+                        <h3 id="dash-username" class="font-brand text-lg font-bold">Minha Conta Formiga</h3>
+                        <p id="dash-email" class="text-xs text-choco-300">usuario@email.com</p>
+                    </div>
+                </div>
+                <button id="close-dash-modal" class="w-8 h-8 rounded-full bg-choco-700 text-choco-200 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Dashboard Nav Tabs -->
+            <div class="flex border-b border-choco-100 bg-choco-50 text-xs font-bold text-choco-600">
+                <button id="dash-tab-orders" class="flex-1 py-3 border-b-2 border-pinksoft-500 text-pinksoft-600 bg-white">Meus Pedidos</button>
+                <button id="dash-tab-profile" class="flex-1 py-3 border-b-2 border-transparent hover:text-pinksoft-600">Meu Perfil & Endereço</button>
+                <button id="dash-tab-loyalty" class="flex-1 py-3 border-b-2 border-transparent hover:text-pinksoft-600">Pontos Formiga</button>
+            </div>
+
+            <!-- Content Panels -->
+            <div class="p-6 overflow-y-auto flex-1">
+                <!-- ORDERS PANEL -->
+                <div id="panel-orders" class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-sm font-bold text-choco-900">Histórico de Pedidos</h4>
+                        <span class="text-xs text-choco-500">Atualizado via Firebase Firestore</span>
+                    </div>
+                    <div id="orders-list-container" class="space-y-3">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- PROFILE PANEL -->
+                <div id="panel-profile" class="space-y-4 hidden">
+                    <form id="form-save-profile" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-choco-800 mb-1">Nome Exibição</label>
+                            <input type="text" id="prof-name" class="w-full px-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-choco-800 mb-1">Telefone / WhatsApp</label>
+                            <input type="text" id="prof-phone" placeholder="(41) 0000-0000" class="w-full px-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-choco-800 mb-1">Endereço Principal de Entrega</label>
+                            <textarea id="prof-address" rows="3" placeholder="Rua, Número, Bairro, CEP e Complemento" class="w-full px-3 py-2.5 rounded-xl border border-choco-200 text-xs focus:outline-none focus:border-pinksoft-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-pinksoft-500 hover:bg-pinksoft-600 text-white font-bold px-6 py-2.5 rounded-xl text-xs transition">
+                            Salvar Alterações
+                        </button>
+                    </form>
+                </div>
+
+                <!-- LOYALTY PANEL -->
+                <div id="panel-loyalty" class="space-y-6 hidden">
+                    <div class="bg-gradient-to-r from-pinksoft-500 to-choco-800 text-white p-6 rounded-2xl shadow-md text-center">
+                        <span class="text-xs font-bold uppercase tracking-wider text-pinksoft-200">Seu Saldo de Fidelidade</span>
+                        <h2 id="loyalty-big-points" class="font-brand text-4xl font-bold my-1">350 Points</h2>
+                        <p class="text-xs text-cream-200">Você está a apenas 150 pontos do seu próximo prêmio!</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-choco-900 mb-3">Recompensas Disponíveis</h4>
+                        <div class="space-y-3">
+                            <div class="p-3 border border-choco-200 rounded-xl flex items-center justify-between bg-choco-50">
+                                <div>
+                                    <p class="text-xs font-bold text-choco-900">Cupom de R$ 15,00 OFF</p>
+                                    <p class="text-[10px] text-choco-500">Resgate por 300 Pontos</p>
+                                </div>
+                                <button class="bg-pinksoft-500 hover:bg-pinksoft-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">Resgatar</button>
+                            </div>
+                            <div class="p-3 border border-choco-200 rounded-xl flex items-center justify-between bg-choco-50">
+                                <div>
+                                    <p class="text-xs font-bold text-choco-900">1 Brownie Tradicional Grátis</p>
+                                    <p class="text-[10px] text-choco-500">Resgate por 500 Pontos</p>
+                                </div>
+                                <button class="bg-choco-300 text-choco-600 text-xs font-bold px-3 py-1.5 rounded-lg cursor-not-allowed">Faltam 150 pts</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Floating Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 bg-choco-900 text-white px-4 py-3 rounded-2xl shadow-2xl border border-choco-700 z-50 hidden flex items-center gap-3 transition-all animate-bounce">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-msg" class="text-xs font-bold">Ação realizada!</span>
+    </div>
+
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            signInAnonymously, 
+            signInWithCustomToken, 
+            createUserWithEmailAndPassword, 
+            signInWithEmailAndPassword, 
+            signOut, 
+            sendPasswordResetEmail, 
+            updateProfile, 
+            onAuthStateChanged 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            doc, 
+            getDoc, 
+            setDoc, 
+            updateDoc, 
+            collection, 
+            addDoc, 
+            onSnapshot 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global environment handling
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'formiga-raivosa-default';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' 
+            ? JSON.parse(__firebase_config) 
+            : {
+                apiKey: "AIzaSyDummyKeyForFormigaRaivosaApp12345",
+                authDomain: "formiga-raivosa.firebaseapp.com",
+                projectId: "formiga-raivosa",
+                storageBucket: "formiga-raivosa.appspot.com",
+                messagingSenderId: "1234567890",
+                appId: "1:1234567890:web:abcdef123456"
+            };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const PRODUCTS = [
+            {
+                id: 'p1',
+                name: 'Brownie Tradicional Ninho & Nutella',
+                category: 'brownies',
+                price: 18.90,
+                badge: 'Mais Pedido',
+                image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80',
+                desc: 'Massa cremosa de chocolate 50% coberta com recheio denso de Ninho e pura Nutella.'
+            },
+            {
+                id: 'p2',
+                name: 'Vulcão de Brigadeiro Belga',
+                category: 'vulcao',
+                price: 24.50,
+                badge: 'Explosão de Recheio',
+                image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80',
+                desc: 'Brownie vulcânico que transborda ganache de chocolate Callebaut ao cortar.'
+            },
+            {
+                id: 'p3',
+                name: 'Blondie de Pistache e Chocolate Branco',
+                category: 'blondies',
+                price: 22.00,
+                badge: 'Gourmet Premium',
+                image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80',
+                desc: 'Brownie claro de baunilha com pedaços de pistache e calda artesanal.'
+            },
+            {
+                id: 'p4',
+                name: 'Coxinha de Morango com Brigadeiro',
+                category: 'sobremesas',
+                price: 16.00,
+                badge: 'Sucesso absoluto',
+                image: 'https://media.istockphoto.com/id/1739777715/pt/foto/brazilian-sweet-strawberry-coxinha.webp?a=1&b=1&s=612x612&w=0&k=20&c=nsjfvOE6sVv632uc1DSaDZXG0Fww2x5hhM1uCBjmNCc=',
+                desc: 'Morango fresco selecionado envolto em brigadeiro gourmet e granulado nobre.'
+            },
+            {
+                id: 'p5',
+                name: 'Brownie Slice Triplo Chocolate',
+                category: 'brownies',
+                price: 15.50,
+                badge: 'Crocante',
+                image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80',
+                desc: 'Fatia generosa com pedaços de chocolate ao leite, meio amargo e branco.'
+            },
+            {
+                id: 'p6',
+                name: 'Copo da Felicidade Red Velvet',
+                category: 'sobremesas',
+                price: 26.00,
+                badge: 'Novo!',
+                image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80',
+                desc: 'Camadas de bolo veludo vermelho, cream cheese cremoso e geleia artesanal de morango.'
+            },
+            {
+                id: 'p7',
+                name: 'Vulcão de Doce de Leite com Nozes',
+                category: 'vulcao',
+                price: 23.90,
+                badge: 'Especial',
+                image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80',
+                desc: 'Brownie tradicional recheado com doce de leite caseiro e nozes crocantes.'
+            },
+            {
+                id: 'p8',
+                name: 'Blondie de Frutas Vermelhas',
+                category: 'blondies',
+                price: 19.90,
+                badge: 'Leve & Fresco',
+                image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80',
+                desc: 'Blondie macio com amora, framboesa e toque cítrico suave.'
+            }
+        ];
+
+        let cart = [];
+        let currentUser = null;
+        let appliedCoupon = null;
+        let selectedCategory = 'todos';
+        let searchQuery = '';
+
+        // UI Toast Helper
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast-notification');
+            const icon = document.getElementById('toast-icon');
+            const msg = document.getElementById('toast-msg');
+
+            msg.textContent = message;
+            if (isError) {
+                icon.className = "fa-solid fa-circle-exclamation text-red-400 text-lg";
+            } else {
+                icon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
+            }
+
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Initialize Auth Listener
+        async function setupAuth() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else if (!auth.currentUser) {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.warn('Auth token sign-in fallback:', err.message);
+            }
+
+            onAuthStateChanged(auth, async (user) => {
+                currentUser = user;
+                updateAuthUI(user);
+                if (user && !user.isAnonymous) {
+                    loadUserData(user.uid);
+                }
+            });
+        }
+
+        // Update UI depending on Auth state
+        function updateAuthUI(user) {
+            const btnOpenAuth = document.getElementById('btn-open-auth');
+            const loggedUserMenu = document.getElementById('logged-user-menu');
+            const avatar = document.getElementById('user-avatar');
+            const displayName = document.getElementById('user-display-name');
+
+            if (user && !user.isAnonymous) {
+                btnOpenAuth.classList.add('hidden');
+                loggedUserMenu.classList.remove('hidden');
+
+                const name = user.displayName || user.email.split('@')[0];
+                const initials = name.slice(0, 2).toUpperCase();
+
+                avatar.textContent = initials;
+                displayName.textContent = `Olá, ${name.split(' ')[0]}`;
+                document.getElementById('mobile-user-name').textContent = name;
+            } else {
+                btnOpenAuth.classList.remove('hidden');
+                loggedUserMenu.classList.add('hidden');
+            }
+        }
+
+        // Load Firestore User Profile Data
+        function loadUserData(userId) {
+            const userRef = doc(db, 'artifacts', appId, 'users', userId, 'profile', 'data');
+            onSnapshot(userRef, (snap) => {
+                if (snap.exists()) {
+                    const data = snap.data();
+                    const points = data.points || 350;
+                    document.getElementById('user-points-badge').textContent = `${points} Pontos`;
+                    document.getElementById('mobile-user-points').innerHTML = `<i class="fa-solid fa-crown text-amber-500 mr-1"></i> ${points} Pontos`;
+                    document.getElementById('loyalty-big-points').textContent = `${points} Pontos`;
+                    
+                    if (data.phone) document.getElementById('prof-phone').value = data.phone;
+                    if (data.address) document.getElementById('prof-address').value = data.address;
+                    if (data.name) document.getElementById('prof-name').value = data.name;
+                } else {
+                    // Initialize default profile doc
+                    setDoc(userRef, { points: 350, name: currentUser.displayName || '' }, { merge: true });
+                }
+            }, (err) => console.log('Firestore Profile sync error:', err));
+
+            // Sync Orders
+            const ordersRef = collection(db, 'artifacts', appId, 'users', userId, 'orders');
+            onSnapshot(ordersRef, (snap) => {
+                const container = document.getElementById('orders-list-container');
+                if (snap.empty) {
+                    container.innerHTML = `<p class="text-xs text-choco-400 text-center py-4">Nenhum pedido realizado ainda.</p>`;
+                    return;
+                }
+
+                let html = '';
+                snap.forEach(docSnap => {
+                    const order = docSnap.data();
+                    html += `
+                        <div class="p-3 bg-choco-50 rounded-xl border border-choco-100 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-bold text-choco-900">Pedido #${docSnap.id.slice(-5)}</p>
+                                <p class="text-[10px] text-choco-500">${order.items?.length || 1} itens • R$ ${order.total?.toFixed(2) || '0.00'}</p>
+                            </div>
+                            <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Concluído</span>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            }, (err) => console.log('Orders sync error:', err));
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('products-grid');
+            const filtered = PRODUCTS.filter(p => {
+                const matchCategory = selectedCategory === 'todos' || p.category === selectedCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center space-y-2">
+                        <i class="fa-solid fa-cookie-bite text-4xl text-choco-300"></i>
+                        <p class="text-sm font-bold text-choco-700">Nenhum doce encontrado!</p>
+                        <p class="text-xs text-choco-400">Tente buscar por outro termo ou categoria.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(p => {
+                const inCart = cart.find(item => item.id === p.id);
+                const cartQty = inCart ? inCart.quantity : 0;
+
+                return `
+                    <div class="bg-choco-50 rounded-3xl overflow-hidden border border-choco-100/80 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-pinksoft-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm">
+                                ${p.badge}
+                            </span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div>
+                                <h3 class="font-bold text-choco-900 text-base group-hover:text-pinksoft-600 transition-colors">${p.name}</h3>
+                                <p class="text-choco-500 text-xs mt-1 leading-snug line-clamp-2">${p.desc}</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-choco-200/50">
+                                <div>
+                                    <span class="text-[10px] text-choco-400 block font-semibold">Valor</span>
+                                    <span class="text-base font-extrabold text-pinksoft-600">R$ ${p.price.toFixed(2).replace('.', ',')}</span>
+                                </div>
+
+                                ${cartQty > 0 ? `
+                                    <div class="flex items-center gap-2 bg-pinksoft-500 text-white p-1.5 rounded-xl text-xs font-bold shadow-md">
+                                        <button onclick="window.updateCartQty('${p.id}', -1)" class="w-6 h-6 hover:bg-pinksoft-600 rounded-lg flex items-center justify-center">-</button>
+                                        <span class="px-1">${cartQty}</span>
+                                        <button onclick="window.updateCartQty('${p.id}', 1)" class="w-6 h-6 hover:bg-pinksoft-600 rounded-lg flex items-center justify-center">+</button>
+                                    </div>
+                                ` : `
+                                    <button onclick="window.addToCart('${p.id}')" class="bg-choco-900 hover:bg-pinksoft-600 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-1.5">
+                                        <i class="fa-solid fa-plus text-[10px]"></i> Adicionar
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        window.addToCart = function(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            renderProducts();
+            showToast(`${product.name} adicionado ao carrinho!`);
+        };
+
+        window.updateCartQty = function(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+
+            updateCartUI();
+            renderProducts();
+        };
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const container = document.getElementById('cart-items-container');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            badge.textContent = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center space-y-3 py-12">
+                        <i class="fa-solid fa-basket-shopping text-5xl text-choco-200"></i>
+                        <p class="text-sm font-bold text-choco-700">Seu carrinho está vazio!</p>
+                        <p class="text-xs text-choco-400">Adicione alguns doces deliciosos para continuar.</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-3 p-3 bg-choco-50 rounded-2xl border border-choco-100">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-xl object-cover">
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-choco-900 leading-tight">${item.name}</h4>
+                            <p class="text-xs font-extrabold text-pinksoft-600 mt-1">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</p>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-white border border-choco-200 p-1 rounded-xl text-xs">
+                            <button onclick="window.updateCartQty('${item.id}', -1)" class="w-5 h-5 text-choco-600 hover:text-pinksoft-600 font-bold">-</button>
+                            <span class="font-bold px-1 text-choco-900">${item.quantity}</span>
+                            <button onclick="window.updateCartQty('${item.id}', 1)" class="w-5 h-5 text-choco-600 hover:text-pinksoft-600 font-bold">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Calculations
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            let discount = 0;
+            if (appliedCoupon === 'FORMIGA10') discount = subtotal * 0.10;
+
+            const delivery = cart.length > 0 ? 8.00 : 0.00;
+            const total = Math.max(0, subtotal - discount + delivery);
+
+            document.getElementById('cart-subtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            document.getElementById('cart-delivery').textContent = `R$ ${delivery.toFixed(2).replace('.', ',')}`;
+            document.getElementById('cart-total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+            const discountRow = document.getElementById('discount-row');
+            if (discount > 0) {
+                discountRow.classList.remove('hidden');
+                document.getElementById('cart-discount').textContent = `- R$ ${discount.toFixed(2).replace('.', ',')}`;
+            } else {
+                discountRow.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupAuth();
+            renderProducts();
+            updateCartUI();
+
+            // Mobile Menu Toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Category Tab Buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.category-btn').forEach(b => {
+                        b.classList.remove('active', 'bg-pinksoft-500', 'text-white');
+                        b.classList.add('bg-choco-50', 'text-choco-700');
+                    });
+                    e.currentTarget.classList.add('active', 'bg-pinksoft-500', 'text-white');
+                    e.currentTarget.classList.remove('bg-choco-50', 'text-choco-700');
+
+                    selectedCategory = e.currentTarget.dataset.category;
+                    renderProducts();
+                });
+            });
+
+            // Search Bar Filter
+            document.getElementById('catalog-search').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderProducts();
+            });
+
+            // Cart Drawer Open/Close
+            const cartDrawerOverlay = document.getElementById('cart-drawer-overlay');
+            const cartDrawer = document.getElementById('cart-drawer');
+
+            document.getElementById('open-cart-btn').addEventListener('click', () => {
+                cartDrawerOverlay.classList.remove('hidden');
+                setTimeout(() => cartDrawer.classList.remove('translate-x-full'), 10);
+            });
+
+            const closeCart = () => {
+                cartDrawer.classList.add('translate-x-full');
+                setTimeout(() => cartDrawerOverlay.classList.add('hidden'), 300);
+            };
+
+            document.getElementById('close-cart-btn').addEventListener('click', closeCart);
+            cartDrawerOverlay.addEventListener('click', (e) => {
+                if (e.target === cartDrawerOverlay) closeCart();
+            });
+
+            // Coupon code application
+            document.getElementById('apply-coupon-btn').addEventListener('click', () => {
+                const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+                const msg = document.getElementById('coupon-msg');
+                if (code === 'FORMIGA10') {
+                    appliedCoupon = 'FORMIGA10';
+                    msg.textContent = 'Cupom de 10% aplicado com sucesso!';
+                    msg.className = 'text-[10px] font-bold text-emerald-600 block';
+                    showToast('Cupom FORMIGA10 aplicado!');
+                } else {
+                    msg.textContent = 'Cupom inválido!';
+                    msg.className = 'text-[10px] font-bold text-red-500 block';
+                }
+                updateCartUI();
+            });
+
+            const authModal = document.getElementById('auth-modal');
+            const btnOpenAuth = document.getElementById('btn-open-auth');
+            const closeAuthModal = document.getElementById('close-auth-modal');
+
+            btnOpenAuth.addEventListener('click', () => authModal.classList.remove('hidden'));
+            closeAuthModal.addEventListener('click', () => authModal.classList.add('hidden'));
+
+            // Toggle Login / Signup Tabs
+            const tabLogin = document.getElementById('tab-login');
+            const tabSignup = document.getElementById('tab-signup');
+            const formLogin = document.getElementById('form-login');
+            const formSignup = document.getElementById('form-signup');
+
+            tabLogin.addEventListener('click', () => {
+                tabLogin.className = "flex-1 py-3 text-xs font-bold text-pinksoft-600 border-b-2 border-pinksoft-500 bg-white transition";
+                tabSignup.className = "flex-1 py-3 text-xs font-bold text-choco-500 hover:text-pinksoft-600 transition";
+                formLogin.classList.remove('hidden');
+                formSignup.classList.add('hidden');
+            });
+
+            tabSignup.addEventListener('click', () => {
+                tabSignup.className = "flex-1 py-3 text-xs font-bold text-pinksoft-600 border-b-2 border-pinksoft-500 bg-white transition";
+                tabLogin.className = "flex-1 py-3 text-xs font-bold text-choco-500 hover:text-pinksoft-600 transition";
+                formSignup.classList.remove('hidden');
+                formLogin.classList.add('hidden');
+            });
+
+            // Auth Forms Submit
+            formLogin.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const pass = document.getElementById('login-password').value;
+                const alertBox = document.getElementById('auth-alert');
+
+                try {
+                    await signInWithEmailAndPassword(auth, email, pass);
+                    authModal.classList.add('hidden');
+                    showToast('Login realizado com sucesso!');
+                } catch (err) {
+                    alertBox.textContent = "Credenciais inválidas ou erro no login.";
+                    alertBox.className = "mb-4 p-3 rounded-xl text-xs font-medium border bg-red-50 text-red-600 border-red-200 block";
+                }
+            });
+
+            formSignup.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('signup-name').value;
+                const email = document.getElementById('signup-email').value;
+                const pass = document.getElementById('signup-password').value;
+                const alertBox = document.getElementById('auth-alert');
+
+                try {
+                    const res = await createUserWithEmailAndPassword(auth, email, pass);
+                    await updateProfile(res.user, { displayName: name });
+                    authModal.classList.add('hidden');
+                    showToast('Conta criada com sucesso! Bem-vindo!');
+                } catch (err) {
+                    alertBox.textContent = "Erro ao criar conta: " + err.message;
+                    alertBox.className = "mb-4 p-3 rounded-xl text-xs font-medium border bg-red-50 text-red-600 border-red-200 block";
+                }
+            });
+
+            document.getElementById('btn-guest-login').addEventListener('click', async () => {
+                try {
+                    await signInAnonymously(auth);
+                    authModal.classList.add('hidden');
+                    showToast('Navegando como convidado!');
+                } catch (err) {
+                    showToast('Erro ao entrar como convidado', true);
+                }
+            });
+
+            document.getElementById('btn-forgot-password').addEventListener('click', async () => {
+                const email = document.getElementById('login-email').value;
+                if (!email) {
+                    showToast('Informe seu e-mail no campo acima primeiro.', true);
+                    return;
+                }
+                try {
+                    await sendPasswordResetEmail(auth, email);
+                    showToast('E-mail de redefinição enviado!');
+                } catch (err) {
+                    showToast('Erro ao enviar e-mail de redefinição', true);
+                }
+            });
+
+            // User Profile Menu Dropdown Toggle
+            const userMenuBtn = document.getElementById('user-menu-btn');
+            const userDropdown = document.getElementById('user-dropdown');
+            if (userMenuBtn) {
+                userMenuBtn.addEventListener('click', () => userDropdown.classList.toggle('hidden'));
+            }
+
+            document.getElementById('btn-logout').addEventListener('click', async () => {
+                await signOut(auth);
+                userDropdown.classList.add('hidden');
+                showToast('Você saiu da conta.');
+            });
+
+            const dashModal = document.getElementById('user-dashboard-modal');
+            const closeDashModal = document.getElementById('close-dash-modal');
+            const navBtnOrders = document.getElementById('nav-btn-orders');
+            const navBtnProfile = document.getElementById('nav-btn-profile');
+            const navBtnLoyalty = document.getElementById('nav-btn-loyalty');
+
+            const openDash = (tab) => {
+                if (userDropdown) userDropdown.classList.add('hidden');
+                dashModal.classList.remove('hidden');
+
+                if (currentUser) {
+                    document.getElementById('dash-username').textContent = currentUser.displayName || 'Usuário Formiga';
+                    document.getElementById('dash-email').textContent = currentUser.email || 'Convidado';
+                    document.getElementById('dash-avatar').textContent = (currentUser.displayName || 'FR').slice(0, 2).toUpperCase();
+                }
+
+                // Switch tabs
+                document.getElementById('panel-orders').classList.add('hidden');
+                document.getElementById('panel-profile').classList.add('hidden');
+                document.getElementById('panel-loyalty').classList.add('hidden');
+
+                if (tab === 'orders') document.getElementById('panel-orders').classList.remove('hidden');
+                if (tab === 'profile') document.getElementById('panel-profile').classList.remove('hidden');
+                if (tab === 'loyalty') document.getElementById('panel-loyalty').classList.remove('hidden');
+            };
+
+            if (navBtnOrders) navBtnOrders.addEventListener('click', () => openDash('orders'));
+            if (navBtnProfile) navBtnProfile.addEventListener('click', () => openDash('profile'));
+            if (navBtnLoyalty) navBtnLoyalty.addEventListener('click', () => openDash('loyalty'));
+            closeDashModal.addEventListener('click', () => dashModal.classList.add('hidden'));
+
+            // Save Profile Changes
+            document.getElementById('form-save-profile').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!currentUser || currentUser.isAnonymous) return;
+
+                const name = document.getElementById('prof-name').value;
+                const phone = document.getElementById('prof-phone').value;
+                const address = document.getElementById('prof-address').value;
+
+                const userRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'profile', 'data');
+                await setDoc(userRef, { name, phone, address }, { merge: true });
+                showToast('Perfil atualizado com sucesso!');
+            });
+
+            // WhatsApp Order Handler
+            document.getElementById('btn-whatsapp-checkout').addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showToast('Adicione itens ao carrinho primeiro!', true);
+                    return;
+                }
+
+                let message = `*NOVO PEDIDO - FORMIGA RAIVOSA*\n\n`;
+                if (currentUser && !currentUser.isAnonymous) {
+                    message += `*Cliente:* ${currentUser.displayName || 'Cadastrado'}\n`;
+                }
+
+                message += `*Itens do Pedido:*\n`;
+                cart.forEach(item => {
+                    message += `• ${item.quantity}x ${item.name} - R$ ${(item.price * item.quantity).toFixed(2)}\n`;
+                });
+
+                const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+                let discount = appliedCoupon === 'FORMIGA10' ? subtotal * 0.10 : 0;
+                const total = subtotal - discount + 8.00;
+
+                if (appliedCoupon) message += `\n*Cupom Aplicado:* ${appliedCoupon}`;
+                message += `\n*Total a Pagar:* R$ ${total.toFixed(2)}`;
+
+                const encoded = encodeURIComponent(message);
+                window.open(`https://wa.me/554100000000?text=${encoded}`, '_blank');
+            });
+
+            // Direct Firestore Order Checkout
+            document.getElementById('btn-direct-checkout').addEventListener('click', async () => {
+                if (cart.length === 0) {
+                    showToast('Seu carrinho está vazio!', true);
+                    return;
+                }
+
+                if (!currentUser || currentUser.isAnonymous) {
+                    authModal.classList.remove('hidden');
+                    showToast('Faça login para salvar pedidos e acumular pontos!', true);
+                    return;
+                }
+
+                const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+                let discount = appliedCoupon === 'FORMIGA10' ? subtotal * 0.10 : 0;
+                const total = subtotal - discount + 8.00;
+
+                try {
+                    const ordersRef = collection(db, 'artifacts', appId, 'users', currentUser.uid, 'orders');
+                    await addDoc(ordersRef, {
+                        items: cart,
+                        total: total,
+                        createdAt: new Date().toISOString()
+                    });
+
+                    // Update Loyalty points
+                    const earnedPoints = Math.floor(total);
+                    const profileRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'profile', 'data');
+                    const snap = await getDoc(profileRef);
+                    const currentPoints = snap.exists() ? (snap.data().points || 0) : 0;
+
+                    await setDoc(profileRef, { points: currentPoints + earnedPoints }, { merge: true });
+
+                    cart = [];
+                    updateCartUI();
+                    renderProducts();
+                    closeCart();
+                    showToast(`Pedido registrado! Você ganhou +${earnedPoints} Pontos Formiga!`);
+                } catch (err) {
+                    showToast('Erro ao concluir pedido.', true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
