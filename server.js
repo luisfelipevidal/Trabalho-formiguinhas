@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Configuração do Banco de Dados
+
 const pool = new Pool({
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
@@ -16,11 +16,7 @@ const pool = new Pool({
   database: process.env.DB_NAME || 'pdv_formiga'
 });
 
-// ==========================================
-// MÓDULO DE GESTÃO DE ESTOQUE (CRUD)
-// ==========================================
 
-// Listar Produtos
 app.get('/produtos', async (req, res) => {
   try {
     const query = `
@@ -37,7 +33,7 @@ app.get('/produtos', async (req, res) => {
   }
 });
 
-// Criar Produto (Com validações de entrada)
+
 app.post('/produtos', async (req, res) => {
   const { categoria_id, nome, descricao, preco, quantidade_estoque, imagem, badge } = req.body;
 
@@ -64,7 +60,7 @@ app.post('/produtos', async (req, res) => {
   }
 });
 
-// Atualizar Produto
+
 app.put('/produtos/:id', async (req, res) => {
   const { id } = req.params;
   const { categoria_id, nome, descricao, preco, quantidade_estoque, imagem, badge } = req.body;
@@ -85,7 +81,7 @@ app.put('/produtos/:id', async (req, res) => {
   }
 });
 
-// Inativação Lógica de Produto
+
 app.delete('/produtos/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -97,10 +93,6 @@ app.delete('/produtos/:id', async (req, res) => {
   }
 });
 
-// ==========================================
-// LÓGICA COMERCIAL DE VENDAS (PDV)
-// ==========================================
-
 app.post('/vendas', async (req, res) => {
   const { operador, forma_pagamento, itens } = req.body;
 
@@ -111,12 +103,12 @@ app.post('/vendas', async (req, res) => {
   const client = await pool.connect();
 
   try {
-    await client.query('BEGIN'); // Início da transação ACID
+    await client.query('BEGIN'); 
 
     let valorTotalVenda = 0;
     const itensProcessados = [];
 
-    // 1. Validação de Stock e Cálculo do Total
+
     for (const item of itens) {
       const { produto_id, quantidade } = item;
 
@@ -131,7 +123,7 @@ app.post('/vendas', async (req, res) => {
 
       const produto = resProd.rows[0];
 
-      // Regra de Restrição Operacional: Bloqueio por stock insuficiente
+    
       if (quantidade > produto.quantidade_estoque) {
         throw new Error(
           `Stock insuficiente para o produto "${produto.nome}". Disponível: ${produto.quantidade_estoque}, Solicitado: ${quantidade}.`
@@ -151,7 +143,7 @@ app.post('/vendas', async (req, res) => {
       });
     }
 
-    // 2. Gravação do Cabeçalho da Venda
+    
     const resVenda = await client.query(
       `INSERT INTO vendas (operador, forma_pagamento, valor_total) 
        VALUES ($1, $2, $3) RETURNING id, data_hora;`,
@@ -160,7 +152,7 @@ app.post('/vendas', async (req, res) => {
 
     const vendaId = resVenda.rows[0].id;
 
-    // 3. Registo dos Itens e Baixa Automática de Stock
+    
     for (const item of itensProcessados) {
       await client.query(
         `INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco_unitario, subtotal)
@@ -174,7 +166,7 @@ app.post('/vendas', async (req, res) => {
       );
     }
 
-    await client.query('COMMIT'); // Confirmação final
+    await client.query('COMMIT'); 
 
     return res.status(201).json({
       mensagem: 'Venda realizada com sucesso!',
@@ -189,7 +181,7 @@ app.post('/vendas', async (req, res) => {
     });
 
   } catch (error) {
-    await client.query('ROLLBACK'); // Reverte alterações caso ocorra erro
+    await client.query('ROLLBACK'); 
     return res.status(400).json({ erro: 'Falha ao processar a venda.', detalhe: error.message });
   } finally {
     client.release();
